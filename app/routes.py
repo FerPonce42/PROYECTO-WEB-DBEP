@@ -333,7 +333,14 @@ def sga():
         flash('Debes iniciar sesión para acceder a esta página.')
         return redirect(url_for('login_estudiante'))
 
-    
+@app.route('/terminos')
+def terminos():
+    return render_template('terminos.html')
+
+@app.route('/politica-datos')
+def politica_datos():
+    return render_template('politica_datos.html')
+
 @app.route('/actualizar_informacion', methods=['POST'])
 def actualizar_informacion():
     if 'loggedin' in session:

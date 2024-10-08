@@ -2,7 +2,7 @@
 
 {% block content %}
     <section class="hero">
-        <h1>Postula a <span class="highlight">LA SAN STEELMAN</span></h1>
+        <h1>Postula a <span class="highlight">UCSS</span></h1>
         <p>Inicia tu proceso de postulación a nuestra universidad.</p>
     </section>
     
@@ -43,10 +43,10 @@
             
             <div class="form-group checkboxes">
                 <input type="checkbox" name="permiso_datos" id="permiso_datos" required>
-                <label for="permiso_datos">Sí, acepto permitir que la Universidad Católica San Pablo realice el tratamiento de mis datos de acuerdo al documento contenido en el siguiente <a href="link_a_tu_politica" target="_blank">link</a></label>
+                <label for="permiso_datos">Sí, acepto permitir que la Universidad Católica San Stelman realice el tratamiento de mis datos de acuerdo al documento contenido en el siguiente <a href="{{ url_for('politica_datos') }}" target="_blank">link</a></label>
                 <br>
                 <input type="checkbox" name="terminos" id="terminos" required>
-                <label for="terminos">Sí, acepto los <a href="link_a_terminos" target="_blank">términos y condiciones</a> de la Universidad Católica San Pablo.</label>
+                <label for="terminos">Sí, acepto los <a href="{{ url_for('terminos') }}" target="_blank">términos y condiciones</a> de la Universidad Católica San Stelman.</label>
             </div>
 
             <div class="form-group">
