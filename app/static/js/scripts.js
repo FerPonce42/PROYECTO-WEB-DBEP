@@ -19,10 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const indicators = document.querySelectorAll('.carousel-indicators button');
 
     function showSlide(index) {
+        const carouselWidth = document.querySelector('.carousel').clientWidth;
+
         slides.forEach((slide, i) => {
-            slide.classList.toggle('fade', i !== index);
-            indicators[i].classList.toggle('active', i === index);
+            slide.style.transform = `translateX(${(i - index) * carouselWidth}px)`;
         });
+
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+
         currentIndex = index;
     }
 
@@ -37,31 +43,31 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(nextIndex);
     }, 5000);
 
-
-
-function alternarSeccion(seccionId) {
-    var seccion = document.getElementById(seccionId);
-    if (seccion.classList.contains('visible')) {
-        seccion.classList.remove('visible');
-        seccion.classList.add('oculto');
-    } else {
-        ocultarTodasLasSecciones(); 
-        seccion.classList.remove('oculto');
-        seccion.classList.add('visible');
+    function alternarSeccion(seccionId) {
+        var seccion = document.getElementById(seccionId);
+        if (seccion.classList.contains('visible')) {
+            seccion.classList.remove('visible');
+            seccion.classList.add('oculto');
+        } else {
+            ocultarTodasLasSecciones(); 
+            seccion.classList.remove('oculto');
+            seccion.classList.add('visible');
+        }
     }
-}
-function ocultarTodasLasSecciones() {
-    var secciones = document.querySelectorAll('.rectangulo');
-    secciones.forEach(function(seccion) {
-        seccion.classList.remove('visible');
-        seccion.classList.add('oculto');
+
+    function ocultarTodasLasSecciones() {
+        var secciones = document.querySelectorAll('.rectangulo');
+        secciones.forEach(function(seccion) {
+            seccion.classList.remove('visible');
+            seccion.classList.add('oculto');
+        });
+    }
+
+    document.querySelectorAll('.barra-opciones a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = this.getAttribute('data-target');
+            alternarSeccion(target); 
+        });
     });
-}
-document.querySelectorAll('.barra-opciones a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = this.getAttribute('data-target');
-        alternarSeccion(target); 
-    });
-});
 });

@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 {% extends 'base.html' %}
 
 {% block content %}
@@ -14,8 +13,8 @@
     <!-- Carrusel de imágenes -->
     <section class="carousel">
         <img src="{{ url_for('static', filename='images/campus1.jpg') }}" alt="Campus 1">
-        <img src="{{ url_for('static', filename='images/campus2.jpg') }}" alt="Campus 2" style="display:none;">
-        <img src="{{ url_for('static', filename='images/campus3.jpg') }}" alt="Campus 3" style="display:none;">
+        <img src="{{ url_for('static', filename='images/campus2.jpg') }}" alt="Campus 2">
+        <img src="{{ url_for('static', filename='images/campus3.jpg') }}" alt="Campus 3">
         
         <div class="carousel-indicators">
             <button class="active"></button>
