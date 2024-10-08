@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/ccomp.jpg') }}" class="imagen-especial efecto-hover" alt="Ciencia de la Computación">
+            <h1 class="titulo-carrera">Ciencia de la Computación</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Ciencia de la Computación en UCSS?</h2>
+        <p class="texto-pregunta">Vivimos en la era de la tecnología, donde cada aspecto de nuestras vidas está interconectado a través de sistemas computacionales. Desde los teléfonos inteligentes que usamos a diario, hasta los avances en inteligencia artificial, biotecnología y ciberseguridad, las ciencias de la computación son el motor que impulsa la innovación y el cambio.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Cumplir y superar las expectativas de trabajo definidas por el entorno laboral.</li>
+            <li>Desempeñarse como miembro, o líder, de un equipo de trabajo tanto especializado como multidisciplinario.</li>
+            <li>Proponer soluciones al contexto laboral, donde se desenvuelve, basadas en la implementación, o mejora del estado del arte en Ciencia de la Computación y áreas afines.</li>
+            <li>Comunicar de forma efectiva propuestas tecnológicas, a personas de distintos niveles de conocimiento y de diferentes ámbitos sociales.</li>
+            <li>Actualizarse y adaptarse, a nuevos conocimientos computacionales y a diferentes ámbitos laborales, de forma autónoma o mediante estudios complementarios.</li>
+            <li>Demostrar un claro entendimiento de las consecuencias que surgen a partir de creaciones tecnológicas en aspectos tales como: social, ético, humano, moral, legal, ambiental, económico, entre otros.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Ciencia de la Computación</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallaccomp.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

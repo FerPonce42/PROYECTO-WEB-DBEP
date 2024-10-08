@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/psicologia.jpg') }}" class="imagen-especial efecto-hover" alt="Psicología">
+            <h1 class="titulo-carrera">Psicología</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Psicología en UCSS?</h2>
+        <p class="texto-pregunta">La Psicología es una disciplina que se enfoca en comprender el comportamiento humano, sus procesos mentales y emocionales. Estudiar Psicología te permitirá contribuir al bienestar mental y emocional de las personas, mejorando sus relaciones y calidad de vida a través de la intervención terapéutica y el desarrollo personal.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Contribuir a la salud mental y emocional de las personas y comunidades.</li>
+            <li>Desempeñarse en diferentes áreas de la psicología, como la clínica, educativa, organizacional o social.</li>
+            <li>Desarrollar intervenciones basadas en la comprensión de procesos psicológicos y sociales.</li>
+            <li>Comunicar y aplicar conocimientos psicológicos de manera ética y efectiva en diferentes contextos.</li>
+            <li>Seguir actualizándose en avances científicos y técnicas innovadoras en el campo de la psicología.</li>
+            <li>Promover el bienestar emocional respetando la diversidad y los valores humanos.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Psicología</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallapsicologia.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

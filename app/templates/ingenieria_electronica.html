@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/ingenieria_electronica.jpg') }}" class="imagen-especial efecto-hover" alt="Ingeniería Electrónica">
+            <h1 class="titulo-carrera">Ingeniería Electrónica y de Telecomunicaciones</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Ingeniería Electrónica en UCSS?</h2>
+        <p class="texto-pregunta">La Ingeniería Electrónica es una disciplina esencial en el mundo actual, donde la tecnología avanza a pasos agigantados. En UCSS, ofrecemos un programa que combina teoría y práctica, preparándote para enfrentar los desafíos del sector. Te formarás en áreas como circuitos, sistemas de control y telecomunicaciones, adquiriendo las habilidades necesarias para diseñar y desarrollar soluciones innovadoras.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Diseñar y desarrollar sistemas electrónicos que respondan a las necesidades del mercado.</li>
+            <li>Implementar soluciones tecnológicas innovadoras en diferentes áreas de la industria.</li>
+            <li>Trabajar en equipos interdisciplinarios, liderando proyectos tecnológicos y colaborando efectivamente.</li>
+            <li>Aplicar principios de ingeniería para resolver problemas complejos en el ámbito electrónico.</li>
+            <li>Mantenerse actualizado en las últimas tendencias y tecnologías del campo de la ingeniería electrónica.</li>
+            <li>Evaluar el impacto social, ético y ambiental de las tecnologías implementadas.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Ingeniería Electrónica</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallaingenieria.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

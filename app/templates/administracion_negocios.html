@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/administracion_negocios.jpg') }}" class="imagen-especial efecto-hover" alt="Administración de Negocios">
+            <h1 class="titulo-carrera">Administración de Negocios</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Administración de Negocios en UCSS?</h2>
+        <p class="texto-pregunta">La Administración de Negocios es fundamental para el desarrollo y el éxito de cualquier organización. En UCSS, te ofrecemos una formación integral que combina teoría y práctica, preparándote para afrontar los retos del mundo empresarial actual. Nuestro programa te ayudará a desarrollar habilidades en liderazgo, gestión y toma de decisiones estratégicas.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Cumplir y superar las expectativas laborales en el ámbito empresarial.</li>
+            <li>Desempeñarse como líderes en equipos multidisciplinarios, fomentando la colaboración y la innovación.</li>
+            <li>Desarrollar estrategias efectivas para la gestión y el crecimiento de organizaciones.</li>
+            <li>Comunicar de manera clara y efectiva ideas y propuestas comerciales a diferentes públicos.</li>
+            <li>Mantenerse actualizado en tendencias y cambios en el entorno empresarial, aplicando nuevas herramientas y técnicas de gestión.</li>
+            <li>Demostrar un entendimiento profundo de la responsabilidad social y ética en los negocios.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Administración de Negocios</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallaadministracion.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

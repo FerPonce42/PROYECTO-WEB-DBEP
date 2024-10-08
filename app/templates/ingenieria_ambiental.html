@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/ingenieria_ambiental.jpg') }}" class="imagen-especial efecto-hover" alt="Ingeniería Ambiental" style="max-width: 100%; height: auto;">
+            <h1 class="titulo-carrera">Ingeniería Ambiental</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Ingeniería Ambiental en UCSS?</h2>
+        <p class="texto-pregunta">La Ingeniería Ambiental es fundamental en la lucha contra los problemas ecológicos y en la promoción del desarrollo sostenible. En UCSS, nuestros estudiantes aprenden a gestionar y conservar los recursos naturales, diseñar soluciones para mitigar el impacto ambiental y contribuir al bienestar de las comunidades. Te formarás en temas como la calidad del agua, la gestión de residuos y el cambio climático, preparándote para ser un líder en el cuidado del medio ambiente.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Desarrollar proyectos que promuevan la sostenibilidad y la conservación del medio ambiente.</li>
+            <li>Evaluar y gestionar los impactos ambientales de diversas actividades humanas.</li>
+            <li>Diseñar y proponer soluciones innovadoras a problemas ambientales complejos.</li>
+            <li>Trabajar de manera efectiva en equipos multidisciplinarios, contribuyendo a la resolución de conflictos ambientales.</li>
+            <li>Comunicar de forma clara y efectiva la importancia de la protección del medio ambiente a diversas audiencias.</li>
+            <li>Actualizarse continuamente sobre las normativas y tecnologías emergentes en el campo ambiental.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Ingeniería Ambiental</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallaingenieriaambiental.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

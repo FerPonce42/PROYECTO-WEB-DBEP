@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carreras.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postulacion.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postulate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_postulantes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sga.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sistema_login.css') }}">
+    <title>UCSS</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo UCSS">
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Vive San Stelman</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('quienes_somos') }}">¿Quiénes somos?</a>
+                        <a href="{{ url_for('autoridades') }}">Autoridades</a>
+                        <a href="{{ url_for('profesores') }}">Profesores</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Admisión</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('resultados_admision') }}">Resultados de admisión</a>
+                        <a href="{{ url_for('postula_aqui') }}">Postula aquí</a>
+                        <a href="{{ url_for('preguntas_frecuentes') }}">Preguntas frecuentes</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Carreras</a>
+                    <div class="dropdown-content">
+                        <a href="#">Conoce nuestras carreras</a>
+                        <a href="{{ url_for('medicina') }}">Medicina Humana</a>
+                        <a href="{{ url_for('administracion_negocios') }}">Administración de Negocios</a>
+                        <a href="{{ url_for('ciencia_computacion') }}">Ciencia de la Computación</a>
+                        <a href="{{ url_for('ingenieria_electronica') }}">Ingeniería Electrónica y de Telecomunicaciones</a>
+                        <a href="{{ url_for('educacion') }}">Educación</a>
+                        <a href="{{ url_for('psicologia') }}">Psicología</a>
+                        <a href="{{ url_for('ingenieria_ambiental') }}">Ingeniería Ambiental</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Posgrado</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('programas') }}">Programas</a>
+                        <a href="{{ url_for('maestrias') }}">Maestrías</a>
+                        <a href="{{ url_for('diplomados') }}">Diplomados</a>
+                        <a href="{{ url_for('cursos_programas_especializados') }}">Cursos y Programas Especializados</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="{{ url_for('login_estudiante') }}">SGA</a>
+                </li>                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Dirección: Planeta Marte </p>
+        <p>Horarios: Lunes a viernes de 9:00 a 17:00 horas.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+</body>
+</html>

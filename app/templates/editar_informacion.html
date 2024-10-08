@@ -1,0 +1,21 @@
+<!-- editar_informacion.html -->
+<h1>Editar Información</h1>
+<form method="POST">
+    <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ usuario[0] }}">
+    </div>
+    <div>
+        <label>Apellido Paterno:</label>
+        <input type="text" name="apellido_paterno" value="{{ usuario[1] }}">
+    </div>
+    <div>
+        <label>Apellido Materno:</label>
+        <input type="text" name="apellido_materno" value="{{ usuario[2] }}">
+    </div>
+    <div>
+        <label>Número de Celular:</label>
+        <input type="text" name="numero_celular" value="{{ usuario[3] }}">
+    </div>
+    <button type="submit">Guardar Cambios</button>
+</form>

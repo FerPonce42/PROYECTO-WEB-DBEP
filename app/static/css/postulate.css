@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #00254F;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #00254F;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.text-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Máximo ancho para las secciones */
+    margin: 20px auto; /* Centra la sección */
+}
+
+/* Estilos específicos para el formulario de postulación */
+.form-section {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 20px auto; /* Centra el formulario */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Color de fondo del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaciado inferior entre grupos de formularios */
+}
+
+.form-input,
+.form-select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #00254F; /* Color del borde al enfocar */
+}
+
+.btn-submit {
+    background-color: #00254F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-submit:hover {
+    background-color: #004080; /* Color de fondo al pasar el ratón */
+}
+
+.checkboxes {
+    margin: 15px 0; /* Espaciado superior e inferior */
+}
+
+.checkboxes label {
+    display: inline-block; /* Para permitir mejor alineación */
+    margin-left: 5px; /* Espacio entre el checkbox y el texto */
+}
+
+footer {
+    background-color: #00254F;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    margin-top: 20px;
+}

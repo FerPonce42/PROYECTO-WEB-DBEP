@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #00254F;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #00254F;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.text-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Máximo ancho para las secciones */
+    margin: 20px auto; /* Centra la sección */
+}
+
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal si la tabla es muy ancha */
+}
+
+table {
+    width: 100%; /* Asegura que la tabla use todo el ancho del contenedor */
+    border-collapse: collapse; /* Colapsa bordes para mejor apariencia */
+    margin-top: 20px; /* Espaciado superior para la tabla */
+}
+
+th, td {
+    padding: 10px; /* Espaciado interno de celdas */
+    text-align: left; /* Alineación a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
+}
+
+th {
+    background-color: #00254F; /* Color de fondo para el encabezado */
+    color: white; /* Color de texto del encabezado */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el ratón sobre la fila */
+}
+
+.barra-opciones {
+    margin-top: 20px;
+}
+
+.barra-opciones .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.barra-opciones .menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.barra-opciones .menu li a {
+    text-decoration: none;
+    color: #262626;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: 1px solid #00254F;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.barra-opciones .menu li a:hover {
+    background-color: #00254F;
+    color: white;
+}
+
+footer {
+    background-color: #00254F;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    margin-top: 20px;
+}

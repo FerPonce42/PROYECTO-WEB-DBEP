@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+
+
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00254F;
+    z-index: 1000;
+}
+
+
+header img {
+    width: 120px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+}
+
+
+
+
+main {
+    margin-top: 100px;
+}
+
+
+header {
+    background-color: #00254F;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+header img {
+    width: 130px;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
+
+
+.yep .na {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+nav ul li {
+    position: relative;
+    margin: 0 20px;
+}
+
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+
+nav a:hover {
+    background-color: #00254F;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.oculto {
+    display: none;
+}
+
+
+.visible {
+    display: block;
+}
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Carrusel */
+.carousel {
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+.carousel img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+.carousel img.fade {
+    opacity: 0;
+}
+
+
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.carousel-indicators button {
+    background-color: #ccc;
+    border: none;
+    padding: 5px;
+    margin: 0 2px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+
+.carousel-indicators button.active {
+    background-color: #FF003C;
+}
+
+
+section.hero {
+    background: linear-gradient(45deg, #102a47, #078ec4);
+    color: white;
+    text-align: center;
+    padding: 10px 200px;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+
+section.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+section.hero p {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+
+section.about, section.features {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+section.about h2, section.features h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.feature-cards .card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.feature-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+
+.feature-cards .card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+
+
+    nav ul li {
+        margin: 8px ;
+    }
+}
+footer {
+    background-color: #00254F;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    position: relative;
+}
+
+
+.cuer {
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+    .imagen-especial {
+        width: 100%;  
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 6s;
+    }
+.efecto-hover:hover {
+    transform: scale(1.05);
+    transition: 6s;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  .barra-opciones {
+    font-family: sans-serif;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+ 
+  .barra-opciones .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+ 
+  .barra-opciones .menu li {
+    list-style: none;
+  }
+ 
+  .barra-opciones .menu li a {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    margin: 20px 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #262626;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .5s;
+    z-index: 1;
+  }
+ 
+  .barra-opciones .menu li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #262626;
+    border-bottom: 2px solid #262626;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .3s;
+    z-index: 0;
+  }
+ 
+  .barra-opciones .menu li a:hover {
+    color: #ffffff;
+  }
+ 
+  .barra-opciones .menu li a:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2113a7;
+    transform: scale(0);
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+  }
+ 
+  .barra-opciones .menu li a:hover:before {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+ 
+  .barra-opciones .menu li a:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+ 

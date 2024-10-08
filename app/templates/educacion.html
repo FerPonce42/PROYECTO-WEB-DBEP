@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/edu.jpg') }}" class="imagen-especial efecto-hover" alt="Educación">
+            <h1 class="titulo-carrera">Educación</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Educación en UCSS?</h2>
+        <p class="texto-pregunta">La educación es uno de los pilares fundamentales de la sociedad, y ser parte de este campo significa tener el poder de transformar vidas y comunidades. La carrera de Educación en UCSS te preparará para ser un profesional capaz de desarrollar métodos de enseñanza innovadores y efectivos, que promuevan un aprendizaje integral y equitativo.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Formar profesionales en educación con competencias para actuar con ética y responsabilidad social.</li>
+            <li>Desempeñarse de manera eficaz en distintos contextos educativos, aplicando técnicas pedagógicas innovadoras.</li>
+            <li>Desarrollar habilidades para la investigación y la gestión educativa, contribuyendo al mejoramiento continuo de las instituciones.</li>
+            <li>Fomentar el aprendizaje integral y promover la inclusión y equidad en el ámbito educativo.</li>
+            <li>Actualizarse constantemente en nuevas tecnologías y métodos pedagógicos.</li>
+            <li>Participar activamente en la promoción de una educación de calidad para el desarrollo sostenible de la sociedad.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Educación</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallaeducacion.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}

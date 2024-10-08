@@ -1,0 +1,52 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo UCSS">
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenido a la Universidad Católica San Stelman</h1>
+        <p>Una comunidad que busca, descubre y comunica la verdad.</p>
+    </section>
+
+    <!-- Carrusel de imágenes -->
+    <section class="carousel">
+        <img src="{{ url_for('static', filename='images/campus1.jpg') }}" alt="Campus 1">
+        <img src="{{ url_for('static', filename='images/campus2.jpg') }}" alt="Campus 2" style="display:none;">
+        <img src="{{ url_for('static', filename='images/campus3.jpg') }}" alt="Campus 3" style="display:none;">
+        
+        <div class="carousel-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>¿Qué es la San Stelman?</h2>
+        <p>Somos una comunidad académica animada por las orientaciones de la Iglesia Católica...</p>
+    </section>
+
+    <section class="features">
+        <h2>¿Qué nos hace diferentes?</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/infraestructura.jpg') }}" alt="Infraestructura">
+                <h3>Infraestructura</h3>
+                <p>Nuestras instalaciones están diseñadas para el máximo rendimiento académico...</p>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/vida_universitaria.jpg') }}" alt="Vida Universitaria">
+                <h3>Vida Universitaria</h3>
+                <p>Eventos, actividades y una comunidad vibrante...</p>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/excelencia_academica.jpg') }}" alt="Excelencia Académica">
+                <h3>Excelencia Académica</h3>
+                <p>Comprometidos con la formación de profesionales de alto nivel...</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

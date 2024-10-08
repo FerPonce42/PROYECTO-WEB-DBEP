@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Postula a <span class="highlight">LA SAN STEELMAN</span></h1>
+        <p>Inicia tu proceso de postulación a nuestra universidad.</p>
+    </section>
+    
+    <section class="details text-section">
+        <h2>Guía de postulación</h2>
+        <p>Sigue los pasos indicados para completar tu postulación de manera efectiva.</p>
+    </section>    
+    
+    <section class="form-section text-section">
+        <form action="/postula-aqui" method="POST">
+            <div class="form-group">
+                <input type="text" name="nombre" class="form-input" placeholder="Nombre*" required>
+                <input type="text" name="apellido_paterno" class="form-input" placeholder="Apellido Paterno*" required>
+                <input type="text" name="apellido_materno" class="form-input" placeholder="Apellido Materno*" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" class="form-input" placeholder="Email*" required>
+                <input type="tel" name="numero_celular" class="form-input" placeholder="Número de celular*" required>
+                <input type="text" name="numero_documento" class="form-input" placeholder="Número de Documento*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="carrera">Carrera a postular*</label><br>
+                <select name="carrera" id="carrera" class="form-select" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Medicina Humana">Medicina Humana</option>
+                    <option value="Administrador de Negocios">Administrador de Negocios</option>
+                    <option value="Ciencia de la Computación">Ciencia de la Computación</option>
+                    <option value="Ingeniería Electrónica y Telecomunicaciones">Ingeniería Electrónica y Telecomunicaciones</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Psicología">Psicología</option>
+                    <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                </select>
+            </div>
+
+            <p>Para poder proporcionarte el contenido solicitado, debemos almacenar, procesar y dar tratamiento a tus datos personales. Si aceptas que almacenemos tus datos personales para este fin, marca la casilla que está a continuación.</p>
+            
+            <div class="form-group checkboxes">
+                <input type="checkbox" name="permiso_datos" id="permiso_datos" required>
+                <label for="permiso_datos">Sí, acepto permitir que la Universidad Católica San Pablo realice el tratamiento de mis datos de acuerdo al documento contenido en el siguiente <a href="link_a_tu_politica" target="_blank">link</a></label>
+                <br>
+                <input type="checkbox" name="terminos" id="terminos" required>
+                <label for="terminos">Sí, acepto los <a href="link_a_terminos" target="_blank">términos y condiciones</a> de la Universidad Católica San Pablo.</label>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

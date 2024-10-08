@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero text-section">
+        <h1 class="hero-title">Resultados de Admisión</h1>
+       
+    </section>
+
+    <section class="details text-section">
+        <h2>Resultados recientes</h2>
+        <div class="table-container"> <!-- Nuevo contenedor para centrar la tabla -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Carrera</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for resultado in resultados %}
+                    <tr>
+                        <td>{{ resultado[0] }}</td>
+                        <td>{{ resultado[1] }}</td>
+                        <td>{{ resultado[2] }}</td>
+                        <td>{{ resultado[3] }}</td>
+                        <td>{{ resultado[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

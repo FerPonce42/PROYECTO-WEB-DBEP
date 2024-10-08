@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_postulantes.css') }}">
+    <title>Postulantes</title>
+</head>
+<body>
+    <h1>Postulantes</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Email</th>
+                <th>Celular</th>
+                <th>Documento</th>
+                <th>Carrera</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for postulante in postulantes %}
+            <tr>
+                <td>{{ postulante[1] }}</td>
+                <td>{{ postulante[2] }}</td>
+                <td>{{ postulante[3] }}</td>
+                <td>{{ postulante[4] }}</td>
+                <td>{{ postulante[5] }}</td>
+                <td>{{ postulante[6] }}</td>
+                <td>{{ postulante[7] }}</td>
+                <td>{{ postulante[8] }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('aceptar_postulante', id=postulante[0]) }}">
+                        <button type="submit">Aceptar</button>
+                    </form>
+                    <form method="POST" action="{{ url_for('rechazar_postulante', id=postulante[0]) }}">
+                        <button type="submit">Rechazar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

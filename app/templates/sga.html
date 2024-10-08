@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA - Sistema de Gestión Académica</title>
+</head>
+<body>
+    <h1>Hola, {{ user[0] }} {{ user[1] }}!</h1>
+    <h2>Tus cursos:</h2>
+    <ul>
+        {% for curso in cursos %}
+            <li>{{ curso[0] }}</li>
+        {% endfor %}
+    </ul>
+    
+    <button onclick="document.getElementById('informacion-personal').style.display='block'">Información Personal</button>
+    <div id="informacion-personal" style="display:none;">
+        <h2>Información Personal</h2>
+        <form action="/actualizar_informacion" method="POST" enctype="multipart/form-data">
+            <label for="foto">Subir foto:</label>
+            <input type="file" name="foto" accept="image/*"><br>
+    
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" value="{{ user[0] }}" readonly><br>
+    
+            <label for="apellido_paterno">Apellido Paterno:</label>
+            <input type="text" name="apellido_paterno" value="{{ user[1] }}" readonly><br>
+    
+            <label for="apellido_materno">Apellido Materno:</label>
+            <input type="text" name="apellido_materno" value="{{ user[2] }}" readonly><br>
+    
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" value="{{ user[6] }}" readonly><br>
+    
+            <label for="numero_celular">Número de Celular:</label>
+            <input type="text" name="numero_celular" value="{{ user[3] }}"><br>
+    
+            <button type="submit">Actualizar Información</button>
+        </form>
+    </div>
+</body>
+</html>

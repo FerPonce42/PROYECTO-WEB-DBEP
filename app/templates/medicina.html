@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="cuer">
+            <img src="{{ url_for('static', filename='images/medicina.jpg') }}" class="imagen-especial efecto-hover" alt="Medicina">
+            <h1 class="titulo-carrera">Medicina Humana</h1>
+        </div>
+    </section>
+
+    <section class="details text-section">
+        <h2 class="titulo-pregunta">¿Por qué estudiar Medicina en UCSS?</h2>
+        <p class="texto-pregunta">La medicina es una de las profesiones más respetadas y valoradas en la sociedad. Estudiar Medicina en UCSS te brinda la oportunidad de impactar vidas, promover la salud y trabajar en el corazón del avance científico. Nuestro programa te ofrece una formación integral, combinando teoría y práctica, para prepararte para los desafíos de la atención médica moderna.</p>
+    </section>
+
+    <section class="barra-opciones">
+        <ul class="menu">
+            <li><a href="#" data-target="objetivos" class="tab">Objetivos educativos del programa</a></li>
+            <li><a href="#" data-target="malla" class="tab">Malla curricular</a></li>
+        </ul>
+    </section>
+
+    <section id="objetivos" class="text-section oculto">
+        <h3>Objetivos educativos del programa</h3>
+        <p>Describe lo que se espera que los graduados logren cinco años después de la graduación:</p>
+        <ul>
+            <li>Cumplir y superar las expectativas de trabajo definidas por el entorno laboral en el área de la salud.</li>
+            <li>Desempeñarse como miembro o líder de un equipo de salud, colaborando con otros profesionales en un entorno multidisciplinario.</li>
+            <li>Proponer soluciones efectivas y éticas en el contexto de la atención médica.</li>
+            <li>Comunicar de forma efectiva y compasiva propuestas y tratamientos médicos a pacientes y familiares de diferentes contextos.</li>
+            <li>Actualizarse y adaptarse a nuevos avances médicos y científicos de manera autónoma o mediante estudios complementarios.</li>
+            <li>Demostrar un claro entendimiento de las implicaciones éticas, legales y sociales de las prácticas médicas.</li>
+        </ul>
+    </section>
+
+    <section id="malla" class="text-section oculto">
+        <h3>Malla curricular de Medicina</h3>
+        <p>A continuación, se muestra la malla curricular:</p>
+        <img src="{{ url_for('static', filename='images/mallacarreras/mallamedicina.png') }}" alt="Malla Curricular" style="max-width: 100%; height: auto;">
+    </section>
+
+    <script src="{{ url_for('static', filename='js/carreras.js') }}"></script>
+    <script>
+        // Inicializa la pestaña de objetivos como visible
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('objetivos'); // Muestra la pestaña de objetivos al cargar
+        });
+    </script>
+{% endblock %}
