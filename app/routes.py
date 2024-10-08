@@ -1,4 +1,4 @@
-# Importaciones necesarias
+# Importaciones
 from flask import render_template, request, redirect, url_for, session, flash
 from werkzeug.security import check_password_hash, generate_password_hash
 from email.mime.text import MIMEText
@@ -7,7 +7,7 @@ import random
 from app import app, mysql
 
 def generar_correo_institucional(nombre, apellido_paterno, apellido_materno):
-    # Eliminamos posibles espacios adicionales de los nombres y apellidos
+    # Eliminar espacios y generar correo
     nombre = nombre.strip()
     apellido_paterno = apellido_paterno.strip()
     apellido_materno = apellido_materno.strip() if apellido_materno else ''
@@ -22,6 +22,7 @@ def generar_correo_institucional(nombre, apellido_paterno, apellido_materno):
 
 
 def generar_contrasena_aleatoria():
+    # Crear contraseña aleatoria
     caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"
     return ''.join(random.choice(caracteres) for i in range(10))
 
@@ -30,7 +31,7 @@ import smtplib
 
 def enviar_correo_bienvenida(correo_destino, correo_institucional, contrasena, carrera):
     try:
-        # Crear el mensaje MIME con codificación explícita UTF-8
+        # Crear mensaje MIME
         mensaje = MIMEText(
             f"Felicitaciones por ingresar a {carrera}. UCSS te da la bienvenida!\n\n"
             f"Para entrar al SGA utiliza estos datos:\n"
@@ -45,11 +46,11 @@ def enviar_correo_bienvenida(correo_destino, correo_institucional, contrasena, c
         mensaje['From'] = 'no-reply@ucss.edu.pe'
         mensaje['To'] = correo_destino
 
-        # Configuración del servidor de correo
+        # Configurar servidor de correo
         servidor = smtplib.SMTP('smtp.gmail.com', 587)
         servidor.starttls()
-        servidor.login('desarrollobasado@gmail.com', 'aqow qxfc pqzg xgav')  # Reemplaza con tus credenciales o contraseña de aplicación
-        servidor.sendmail('no-reply@ucss.edu.pe', correo_destino, mensaje.as_string())  # Eliminamos el encode('utf-8')
+        servidor.login('desarrollobasado@gmail.com', 'aqow qxfc pqzg xgav') 
+        servidor.sendmail('no-reply@ucss.edu.pe', correo_destino, mensaje.as_string())  
         servidor.quit()
 
         print("Correo enviado exitosamente.")
@@ -60,7 +61,7 @@ def enviar_correo_bienvenida(correo_destino, correo_institucional, contrasena, c
     except Exception as e:
         print("Error general al enviar el correo:", e)
 
-
+# Rutas de la aplicación
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -69,7 +70,7 @@ def index():
 @app.route('/postula-aqui', methods=['GET', 'POST'])
 def postula_aqui():
     if request.method == 'POST':
-        # Obtener los datos del formulario
+        # Procesar datos del formulario
         nombre = request.form['nombre']
         apellido_paterno = request.form['apellido_paterno']
         apellido_materno = request.form['apellido_materno']
@@ -94,7 +95,7 @@ def postula_aqui():
     
     return render_template('postula_aqui.html')
 
-# Rutas para administrar postulantes
+# Rutas para administración de postulantes
 @app.route('/admin/postulantes')
 def admin_postulantes():
     if 'loggedin' in session and session['rol'] == 'administrador':
@@ -110,7 +111,7 @@ def admin_postulantes():
 def aceptar_postulante(id):
     cursor = mysql.connection.cursor()
     try:
-        # Obtener datos del postulante
+        # Obtener datos del postulante y crear usuario
         cursor.execute("SELECT nombre, apellido_paterno, apellido_materno, email, numero_documento, numero_celular, carrera FROM postulantes WHERE id = %s", (id,))
         postulante = cursor.fetchone()
 
@@ -173,8 +174,8 @@ def rechazar_postulante(id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        correo = request.form['correo']  # Cambia esto según el nombre del campo en tu formulario
-        contrasena = request.form['contrasena']  # Cambia esto según el nombre del campo en tu formulario
+        correo = request.form['correo']  
+        contrasena = request.form['contrasena']  
         
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM usuarios WHERE correo = %s', (correo,))
@@ -221,7 +222,7 @@ def login_estudiante():
 @app.route('/resultados-admision')
 def resultados_admision():
     cursor = mysql.connection.cursor()
-    # Asegúrate de que el estado, carrera y demás campos existan en tu tabla de postulantes
+    # Asegurarse que el estado, carrera y demás campos existan en tu tabla de postulantes
     cursor.execute('SELECT numero_documento, nombre, apellido_paterno, carrera, estado FROM postulantes')
     resultados = cursor.fetchall()
     cursor.close()
@@ -291,7 +292,7 @@ def diplomados():
 def cursos_programas_especializados():
     return render_template('cursos_programas_especializados.html')
 
-# Ruta para el SGA (Sistema de Gestión Ambiental)
+# Ruta para el SGA (Sistema de Gestión Academico)
 @app.route('/sga')
 def sga():
     if 'loggedin' in session:

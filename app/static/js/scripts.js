@@ -1,7 +1,7 @@
 
 // Espera a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-// Menú desplegable
+// Menú Desplegable: Controla la funcionalidad de mostrar y ocultar el contenido del menú desplegable
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
@@ -14,7 +14,7 @@ dropdowns.forEach(dropdown => {
     });
 });
 
-// Carrusel de imágenes
+  // Carrusel de Imágenes: Maneja la lógica para mostrar y cambiar automáticamente las imágenes del carrusel
 let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel img');
 const indicators = document.querySelectorAll('.carousel-indicators button');
@@ -44,6 +44,8 @@ setInterval(function() {
     showSlide(nextIndex);
 }, 5000);
 
+
+// Alternancia de Secciones: Alterna la visibilidad de diferentes secciones según la interacción del usuario
 function alternarSeccion(seccionId) {
     var seccion = document.getElementById(seccionId);
     if (seccion.classList.contains('visible')) {
@@ -55,7 +57,7 @@ function alternarSeccion(seccionId) {
         seccion.classList.add('visible');
     }
 }
-
+// Ocultar Todas las Secciones: Función que oculta todas las secciones visibles en la página
 function ocultarTodasLasSecciones() {
     var secciones = document.querySelectorAll('.rectangulo');
     secciones.forEach(function(seccion) {
@@ -63,7 +65,7 @@ function ocultarTodasLasSecciones() {
         seccion.classList.add('oculto');
     });
 }
-
+//Agrega eventos a los enlaces para alternar las secciones al hacer clic en ellos
 document.querySelectorAll('.barra-opciones a').forEach(function(link) {
     link.addEventListener('click', function(e) {
         e.preventDefault();
