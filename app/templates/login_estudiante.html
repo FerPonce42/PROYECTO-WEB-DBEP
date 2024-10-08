@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Estudiante - UCSS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sistema_login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_estudiantes.css') }}"> <!-- Vinculo a CSS exclusivo -->
 </head>
-<body>
-    <div class="container">
-        <h2>Iniciar Sesión Estudiante</h2>
+<body class="login-estudiantes-body"> <!-- Clase para aplicar estilos exclusivos -->
+    <div class="login-estudiantes-container"> <!-- Contenedor con clase exclusiva -->
+        <h2 class="login-estudiantes-h2">Iniciar Sesión Estudiante</h2> <!-- Encabezado con clase exclusiva -->
         <form method="POST">
-            <label for="correo">Correo Institucional:</label>
-            <input type="email" id="correo" name="correo" required>
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required>
-            <button type="submit">Iniciar Sesión</button>
+            <div class="login-estudiantes-input-group"> <!-- Grupo de entrada con clase exclusiva -->
+                <label for="correo">Correo Institucional:</label>
+                <input type="email" id="correo" name="correo" class="login-estudiantes-input" required> <!-- Campo de entrada con clase exclusiva -->
+            </div>
+            <div class="login-estudiantes-input-group"> <!-- Grupo de entrada para la contraseña -->
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" class="login-estudiantes-input" required> <!-- Campo de entrada con clase exclusiva -->
+            </div>
+            <button type="submit" class="login-estudiantes-btn-submit">Iniciar Sesión</button> <!-- Botón con clase exclusiva -->
         </form>
         {% with messages = get_flashed_messages() %}
           {% if messages %}
-            <ul>
+            <ul class="login-estudiantes-message-list"> <!-- Lista de mensajes con clase exclusiva -->
               {% for message in messages %}
                 <li>{{ message }}</li>
               {% endfor %}
             </ul>
           {% endif %}
         {% endwith %}
+        <div class="login-estudiantes-footer"> <!-- Pie de página con clase exclusiva -->
+           
+        </div>
     </div>
 </body>
 </html>

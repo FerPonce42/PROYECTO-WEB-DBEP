@@ -1,39 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-body.admin-postulantes {
+.admin-postulantes-body { /* Clase específica para el body */
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Color de fondo suave */
     color: #333;
     line-height: 1.6;
-    padding: 20px;
+    padding: 20px; /* Espaciado alrededor del contenido */
 }
 
-h1.admin-header {
-    color: #00254F;
-    text-align: center;
-    margin-bottom: 30px;
+.admin-postulantes-h1 { /* Clase específica para el encabezado */
+    color: #00254F; /* Color del encabezado */
+    text-align: center; /* Centrar el encabezado */
+    margin-bottom: 30px; /* Espaciado inferior */
 }
 
-table.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.admin-postulantes-table {
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsar bordes para una mejor apariencia */
+    margin: 0 auto; /* Centrar la tabla */
+    background-color: #fff; /* Fondo blanco para la tabla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
 }
 
-th.admin-header-cell, td.admin-cell {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.admin-postulantes-th, .admin-postulantes-td { /* Clase específica para th y td */
+    padding: 12px; /* Espaciado interno de celdas */
+    text-align: left; /* Alineación a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
 }
 
-button.admin-button {
-    background-color: #00254F;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.admin-postulantes-th { /* Clase específica para th */
+    background-color: #00254F; /* Color de fondo para el encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+.admin-postulantes-tr:hover { /* Clase para filas al pasar el ratón */
+    background-color: #f1f1f1; /* Color de fondo al pasar el ratón sobre la fila */
+}
+
+.admin-postulantes-button { /* Clase específica para botones */
+    background-color: #00254F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave */
+    margin: 5px; /* Espaciado entre botones */
+}
+
+.admin-postulantes-button:hover { /* Clase para botones al pasar el ratón */
+    background-color: #004080; /* Color de fondo al pasar el ratón */
+}
+
+@media (max-width: 600px) {
+    .admin-postulantes-table {
+        font-size: 14px; /* Tamaño de fuente más pequeño en dispositivos móviles */
+    }
+
+    .admin-postulantes-th, .admin-postulantes-td {
+        padding: 8px; /* Menos espaciado en celdas para pantallas pequeñas */
+    }
+
+    .admin-postulantes-button {
+        width: 100%; /* Botones de ancho completo en móviles */
+        margin: 5px 0; /* Espaciado vertical */
+    }
 }

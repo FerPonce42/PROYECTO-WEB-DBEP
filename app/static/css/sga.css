@@ -1,49 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-body.sga {
+body.sga-page {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Color de fondo suave */
     color: #333;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 20px; /* Espaciado interno para el cuerpo */
 }
 
-h1.sga-title, h2.sga-subtitle {
-    color: #00254F;
-    text-align: center;
+.sga-page h1, .sga-page h2 {
+    color: #00254F; /* Color de los encabezados */
+    text-align: center; /* Centrar los títulos */
 }
 
-ul.sga-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.sga-page ul {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0; /* Sin padding para la lista */
+    display: flex; /* Usar flexbox para alinear los cursos */
+    flex-wrap: wrap; /* Permitir que los cursos se envuelvan */
+    justify-content: center; /* Centrar los cursos */
 }
 
-ul.sga-list li.sga-item {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    width: 150px;
-    text-align: center;
-    transition: box-shadow 0.3s;
+.sga-page ul li {
+    background-color: #ffffff; /* Fondo blanco para los elementos de la lista */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 10px; /* Espaciado entre los elementos */
+    padding: 20px; /* Espaciado interno */
+    width: 150px; /* Ancho fijo para los elementos */
+    text-align: center; /* Centrar el texto */
+    transition: box-shadow 0.3s; /* Transición suave para la sombra */
 }
 
-.button-container.sga-button-container {
-    text-align: center;
-    margin-bottom: 20px;
+.sga-page ul li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
 }
 
-.button.sga-button {
-    background-color: #00254F;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.sga-page .button-container {
+    text-align: center; /* Centrar el contenedor de botones */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.sga-page .button {
+    background-color: #00254F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave */
+    margin: 0 10px; /* Espaciado horizontal entre botones */
+}
+
+.sga-page .button:hover {
+    background-color: #004080; /* Color al pasar el ratón */
+}
+
+.sga-page #informacion-personal {
+    margin: 20px auto; /* Espaciado superior y centrado horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: none; /* Ocultar inicialmente */
+    width: 400px; /* Ancho fijo para la sección de información personal */
+}
+
+.sga-page form {
+    display: flex; /* Usar flexbox para el formulario */
+    flex-direction: column; /* Apilar elementos verticalmente */
+}
+
+.sga-page label {
+    margin: 10px 0 5px; /* Espaciado para las etiquetas */
+}
+
+.sga-page input[type="text"],
+.sga-page input[type="email"],
+.sga-page input[type="file"] {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave */
+}
+
+.sga-page input[type="text"]:focus,
+.sga-page input[type="email"]:focus {
+    border-color: #00254F; /* Color del borde al enfocarse */
+    outline: none; /* Sin contorno */
+}
+
+.sga-page input[type="file"] {
+    margin: 10px 0; /* Espaciado para el campo de archivo */
 }

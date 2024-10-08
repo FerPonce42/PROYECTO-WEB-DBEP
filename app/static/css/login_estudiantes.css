@@ -1,7 +1,6 @@
-/* sistema_login.css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-.login-body { /* Clase específica para el body del login */
+.login-estudiantes-body { /* Clase específica para el body del login */
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f9fa; /* Color de fondo suave */
     color: #333;
@@ -13,7 +12,7 @@
     margin: 0;
 }
 
-.login-container { /* Clase específica para el contenedor */
+.login-estudiantes-container { /* Clase específica para el contenedor */
     background-color: #ffffff; /* Fondo blanco para el contenedor */
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -23,17 +22,16 @@
     text-align: center;
 }
 
-.login-h1 { /* Clase específica para el encabezado */
+.login-estudiantes-h2 { /* Clase específica para el encabezado */
     color: #00254F; /* Color del encabezado */
     margin-bottom: 20px; /* Espaciado inferior */
 }
 
-.input-group {
+.login-estudiantes-input-group {
     margin-bottom: 15px; /* Espaciado inferior entre campos */
 }
 
-input[type="email"],
-input[type="password"] {
+.login-estudiantes-input {
     width: 100%; /* Campo de entrada de ancho completo */
     padding: 12px; /* Espaciado interno */
     border: 1px solid #ddd; /* Borde suave */
@@ -43,13 +41,12 @@ input[type="password"] {
     font-size: 16px; /* Tamaño de fuente consistente */
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
+.login-estudiantes-input:focus {
     border-color: #00254F; /* Color del borde al enfocarse */
     outline: none; /* Sin contorno */
 }
 
-.btn-submit {
+.login-estudiantes-btn-submit {
     background-color: #00254F; /* Color de fondo del botón */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
@@ -60,29 +57,29 @@ input[type="password"]:focus {
     width: 100%; /* Ancho completo */
 }
 
-.btn-submit:hover {
+.login-estudiantes-btn-submit:hover {
     background-color: #004080; /* Color de fondo al pasar el ratón */
 }
 
-.message-list {
+.login-estudiantes-message-list {
     margin-top: 20px; /* Espaciado superior para los mensajes */
     list-style-type: none; /* Sin viñetas */
     padding: 0; /* Sin relleno */
     color: #e74c3c; /* Color de los mensajes */
 }
 
-.login-footer {
+.login-estudiantes-footer {
     margin-top: 20px; /* Espaciado superior */
     font-size: 14px; /* Tamaño de fuente más pequeño */
     color: #666; /* Color del texto */
 }
 
-.login-footer a {
+.login-estudiantes-footer a {
     color: #00254F; /* Color del enlace */
     text-decoration: none; /* Sin subrayado */
     transition: color 0.3s; /* Transición suave */
 }
 
-.login-footer a:hover {
+.login-estudiantes-footer a:hover {
     color: #004080; /* Color del enlace al pasar el ratón */
 }

@@ -3,29 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sistema_login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carreras.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postulacion.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postulate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_postulantes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sga.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sistema_login.css') }}"> <!-- Vinculo a CSS exclusivo -->
+    
     <title>Iniciar Sesión</title>
 </head>
-<body>
-    <h1>Iniciar Sesión</h1>
-    <form method="POST">
-        <label for="correo">Correo:</label>
-        <input type="email" name="correo" required>
-        <br>
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" name="contrasena" required>
-        <br>
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+<body class="login-body"> <!-- Clase específica para el body del login -->
+    <div class="login-container"> <!-- Clase específica para el contenedor -->
+        <h1 class="login-h1">Iniciar Sesión ADMIN</h1>
+        <form method="POST">
+            <div class="input-group"> <!-- Grupo de entrada para el correo -->
+                <label for="correo">Correo:</label>
+                <input type="email" name="correo" required>
+            </div>
+            <div class="input-group"> <!-- Grupo de entrada para la contraseña -->
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" required>
+            </div>
+            <button type="submit" class="btn-submit">Iniciar Sesión</button> <!-- Botón de envío -->
+        </form>
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+        {% with messages = get_flashed_messages() %} <!-- Mensajes para mostrar -->
+            {% if messages %}
+                <ul class="message-list"> <!-- Lista de mensajes -->
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="login-footer"> <!-- Clase específica para el pie de página -->
+           
+        </div>
+    </div>
 </body>
 </html>
