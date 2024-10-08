@@ -365,3 +365,89 @@ footer {
     transform: scaleY(1);
     opacity: 1;
   }
+
+  .mission-vision-values {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.mission-vision-values h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #00254F;
+}
+
+.mission-vision-values p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.mission-vision-values .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mission-vision-values .mission,
+.mission-vision-values .vision,
+.mission-vision-values .values {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px; /* Asegura un ancho mínimo para dispositivos más pequeños */
+    transition: transform 0.3s;
+}
+
+.mission-vision-values .mission:hover,
+.mission-vision-values .vision:hover,
+.mission-vision-values .values:hover {
+    transform: translateY(-5px);
+}
+
+.mission-vision-values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mission-vision-values ul li {
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: left;
+}
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-cards .card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+section.contact {
+    background-color: #00254F;
+    color: white;
+}
+
+section.contact a {
+    color: #FF003C;
+    font-weight: bold;
+}

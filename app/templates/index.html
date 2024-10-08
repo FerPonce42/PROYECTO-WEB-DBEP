@@ -24,8 +24,49 @@
     </section>
 
     <section class="about">
-        <h2>¿Qué es la San Stelman?</h2>
-        <p>Somos una comunidad académica animada por las orientaciones de la Iglesia Católica...</p>
+        <h2>¿Qué es la UCSS?</h2>
+        <p>Somos una comunidad académica animada por las orientaciones de la Iglesia Católica, comprometida con la formación integral de nuestros estudiantes.</p>
+    </section>
+
+    <section class="mission-vision-values">
+        <div class="container">
+            <div class="mission">
+                <h2>Misión</h2>
+                <p>Formar profesionales íntegros, críticos y comprometidos con el desarrollo sostenible y el bienestar de la sociedad, promoviendo valores católicos en su labor.</p>
+            </div>
+            <div class="vision">
+                <h2>Visión</h2>
+                <p>Ser una universidad de referencia nacional e internacional, reconocida por su excelencia académica y su contribución a la sociedad, inspirada en los valores cristianos.</p>
+            </div>
+            <div class="values">
+                <h2>Valores</h2>
+                <ul>
+                    <li><strong>Integridad:</strong> Actuar con honestidad y coherencia.</li>
+                    <li><strong>Respeto:</strong> Valorar la dignidad de cada persona.</li>
+                    <li><strong>Solidaridad:</strong> Comprometerse con el bienestar de la comunidad.</li>
+                    <li><strong>Excelencia:</strong> Buscar la mejora continua en todo lo que hacemos.</li>
+                    <li><strong>Compromiso:</strong> Asumir responsabilidades y ser proactivos en el cambio.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Testimonios de Nuestros Estudiantes</h2>
+        <div class="testimonial-cards">
+            <div class="card">
+                <p>"La Universidad Católica San Stelman me ha brindado las herramientas necesarias para crecer profesionalmente y como persona."</p>
+                <p>- Juan Pérez, Estudiante de Ingeniería</p>
+            </div>
+            <div class="card">
+                <p>"Aquí encontré una comunidad que me apoya y motiva a alcanzar mis metas."</p>
+                <p>- María López, Estudiante de Psicología</p>
+            </div>
+            <div class="card">
+                <p>"La calidad de enseñanza y el ambiente universitario son inigualables."</p>
+                <p>- Carlos Torres, Estudiante de Derecho</p>
+            </div>
+        </div>
     </section>
 
     <section class="features">
@@ -34,18 +75,23 @@
             <div class="card">
                 <img src="{{ url_for('static', filename='images/infraestructura.jpg') }}" alt="Infraestructura">
                 <h3>Infraestructura</h3>
-                <p>Nuestras instalaciones están diseñadas para el máximo rendimiento académico...</p>
+                <p>Nuestras instalaciones están diseñadas para el máximo rendimiento académico, con tecnología de punta y espacios colaborativos.</p>
             </div>
             <div class="card">
                 <img src="{{ url_for('static', filename='images/vida_universitaria.jpg') }}" alt="Vida Universitaria">
                 <h3>Vida Universitaria</h3>
-                <p>Eventos, actividades y una comunidad vibrante...</p>
+                <p>Eventos, actividades y una comunidad vibrante que fomenta la integración y el aprendizaje.</p>
             </div>
             <div class="card">
                 <img src="{{ url_for('static', filename='images/excelencia_academica.jpg') }}" alt="Excelencia Académica">
                 <h3>Excelencia Académica</h3>
-                <p>Comprometidos con la formación de profesionales de alto nivel...</p>
+                <p>Comprometidos con la formación de profesionales de alto nivel, apoyados por un cuerpo docente calificado.</p>
             </div>
         </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contáctanos</h2>
+        <p>Para más información, puedes escribirnos a <a href="mailto:desarrollobasado@gmail.com">desarrollobasado@gmail.com</a> o llamarnos al 43243243242.</p>
     </section>
 {% endblock %}
