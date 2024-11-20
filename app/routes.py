@@ -5,6 +5,41 @@ from email.mime.text import MIMEText
 import smtplib
 import random
 from app import app, mysql
+from flask import jsonify  
+#CONECTAR BASE DE DATOS CON LA APP UCSS
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.json  # Obtener datos enviados en formato JSON
+    correo = data.get('correo')  # Asegúrate de usar las claves correctas del JSON
+    contraseña = data.get('contrasena')
+
+    cursor = mysql.connection.cursor()
+
+    try:
+        # Consulta a la base de datos para obtener el usuario
+        cursor.execute('SELECT id, nombre, apellido, correo, contraseña FROM usuarios WHERE correo = %s', (correo,))
+        usuario = cursor.fetchone()
+
+        # Verificar si el usuario existe y si la contraseña es válida
+        if usuario and check_password_hash(usuario[4], contraseña):  # Contraseña está en la posición 4
+            return jsonify({
+                "success": True,
+                "message": "Login exitoso",
+                "data": {
+                    "id": usuario[0],
+                    "nombre": usuario[1],
+                    "apellido": usuario[2],
+                    "correo": usuario[3]
+                }
+            })
+        else:
+            return jsonify({"success": False, "message": "Correo o contraseña incorrectos"})
+
+    except Exception as e:
+        return jsonify({"success": False, "message": f"Error del servidor: {str(e)}"})
+
+    finally:
+        cursor.close()
 
 def generar_correo_institucional(nombre, apellido_paterno, apellido_materno):
     # Eliminar espacios y generar correo
