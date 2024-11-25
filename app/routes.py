@@ -6,7 +6,6 @@ import smtplib
 import random
 from app import app, mysql
 from flask import jsonify  
-#CONECTAR BASE DE DATOS CON LA APP UCSS
 @app.route('/api/login', methods=['POST'])
 def api_login():
     data = request.json  # Obtener datos enviados en formato JSON
@@ -22,16 +21,28 @@ def api_login():
 
         # Verificar si el usuario existe y si la contraseña es válida
         if usuario and check_password_hash(usuario[4], contraseña):  # Contraseña está en la posición 4
-            return jsonify({
-                "success": True,
-                "message": "Login exitoso",
-                "data": {
-                    "id": usuario[0],
-                    "nombre": usuario[1],
-                    "apellido": usuario[2],
-                    "correo": usuario[3]
-                }
-            })
+            # Ahora buscamos los datos en la tabla 'alumno' usando el 'id' de usuario
+            cursor.execute('SELECT nombre, apellido_paterno, apellido_materno, carrera FROM alumno WHERE usuario_id = %s', (usuario[0],))
+            alumno = cursor.fetchone()
+
+            if alumno:
+                # Si encontramos el registro del alumno, lo devolvemos junto con los datos del usuario
+                return jsonify({
+                    "success": True,
+                    "message": "Login exitoso",
+                    "data": {
+                        "id": usuario[0],
+                        "nombre": usuario[1],
+                        "apellido": usuario[2],
+                        "correo": usuario[3],
+                        "alumno_nombre": alumno[0],
+                        "apellido_paterno": alumno[1],
+                        "apellido_materno": alumno[2],
+                        "carrera": alumno[3]
+                    }
+                })
+            else:
+                return jsonify({"success": False, "message": "Alumno no encontrado en la base de datos."})
         else:
             return jsonify({"success": False, "message": "Correo o contraseña incorrectos"})
 
@@ -40,6 +51,7 @@ def api_login():
 
     finally:
         cursor.close()
+
 
 def generar_correo_institucional(nombre, apellido_paterno, apellido_materno):
     # Eliminar espacios y generar correo
